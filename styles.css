@@ -82,7 +82,7 @@ button {
   display: grid;
   width: 152px;
   height: 152px;
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 3;
   justify-self: start;
   place-items: center;
   overflow: hidden;
@@ -168,6 +168,20 @@ h1 {
 .social-link:hover {
   background: rgba(255, 255, 255, 0.14);
   transform: translateY(-2px);
+}
+
+.profile-topics {
+  display: grid;
+  margin: -2px 0 0;
+  padding: 0;
+  grid-column: 2;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.2;
+  list-style: none;
+  text-shadow: 0 6px 16px rgba(0, 24, 80, 0.18);
 }
 
 .links {
@@ -316,6 +330,11 @@ h1 {
   .social-link svg {
     width: 26px;
     height: 26px;
+  }
+
+  .profile-topics {
+    gap: 3px;
+    font-size: 0.78rem;
   }
 
   .links {
