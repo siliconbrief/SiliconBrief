@@ -15,8 +15,9 @@
   --shadow: 0 18px 55px rgba(0, 28, 84, 0.28);
   --radius: 14px;
   --content-width: 548px;
-  --card-logo-size: 48px;
-  --card-logo-inset: 12px;
+  --card-logo-size: 44px;
+  --card-logo-inset-x: 10px;
+  --card-logo-inset-y: 8px;
   --title-font: "Fredoka", "Arial Rounded MT Bold", "Avenir Next Rounded", ui-rounded, sans-serif;
 }
 
@@ -179,8 +180,8 @@ h1 {
 .link-card {
   position: relative;
   display: grid;
-  min-height: calc(var(--card-logo-size) + var(--card-logo-inset) * 2);
-  padding: var(--card-logo-inset) 18px var(--card-logo-inset) var(--card-logo-inset);
+  min-height: calc(var(--card-logo-size) + var(--card-logo-inset-y) * 2);
+  padding: var(--card-logo-inset-y) 18px var(--card-logo-inset-y) var(--card-logo-inset-x);
   grid-template-columns: var(--card-logo-size) 1fr var(--card-logo-size);
   align-items: center;
   color: #111827;
@@ -278,8 +279,9 @@ h1 {
 
 @media (max-width: 620px) {
   :root {
-    --card-logo-size: 46px;
-    --card-logo-inset: 11px;
+    --card-logo-size: 42px;
+    --card-logo-inset-x: 9px;
+    --card-logo-inset-y: 8px;
   }
 
   .page-shell {
