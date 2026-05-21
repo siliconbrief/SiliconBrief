@@ -116,6 +116,7 @@ h1 {
   letter-spacing: 0;
   text-shadow: 0 8px 22px rgba(0, 24, 80, 0.16);
   transform: translateY(-5px);
+  white-space: nowrap;
 }
 
 .socials {
@@ -169,24 +170,6 @@ h1 {
 .social-link:hover {
   background: rgba(255, 255, 255, 0.14);
   transform: translateY(-2px);
-}
-
-.profile-topics {
-  display: flex;
-  width: min(100%, var(--content-width));
-  margin: 18px 0 0;
-  padding: 0;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.92rem;
-  font-weight: 650;
-  line-height: 1.2;
-  list-style: none;
-  text-align: center;
-  text-shadow: 0 6px 16px rgba(0, 24, 80, 0.18);
 }
 
 .links {
@@ -323,23 +306,23 @@ h1 {
   }
 
   .page-shell {
-    padding: 22px 14px 28px;
+    padding: 22px 12px 28px;
   }
 
   .profile {
     margin-top: 0;
     grid-template-columns: auto minmax(0, 1fr);
-    gap: 11px 13px;
+    gap: 18px 20px;
   }
 
   .avatar-slot {
-    width: 104px;
-    height: 104px;
+    width: clamp(112px, 29vw, 126px);
+    height: clamp(112px, 29vw, 126px);
   }
 
   h1 {
-    font-size: 2.52rem;
-    transform: translateY(-3px);
+    font-size: clamp(2.78rem, 11.2vw, 3.12rem);
+    transform: translateY(-4px);
   }
 
   .socials {
@@ -354,12 +337,6 @@ h1 {
   .social-link svg {
     width: 26px;
     height: 26px;
-  }
-
-  .profile-topics {
-    gap: 8px 12px;
-    margin-top: 16px;
-    font-size: 0.78rem;
   }
 
   .links {
@@ -382,16 +359,16 @@ h1 {
 
 @media (max-width: 380px) {
   .profile {
-    gap: 10px 10px;
+    gap: 16px 16px;
   }
 
   .avatar-slot {
-    width: 90px;
-    height: 90px;
+    width: clamp(98px, 27vw, 106px);
+    height: clamp(98px, 27vw, 106px);
   }
 
   h1 {
-    font-size: 2.12rem;
+    font-size: clamp(2.42rem, 10.8vw, 2.68rem);
   }
 }
 
