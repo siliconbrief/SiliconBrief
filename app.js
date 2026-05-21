@@ -9,7 +9,6 @@ const socials = [
   { label: "Instagram", href: "https://www.instagram.com/siliconbrief/", icon: "instagram" },
   { label: "X", href: "https://x.com/siliconbrief", icon: "x" },
   { label: "YouTube", href: "https://www.youtube.com/@siliconbrief", icon: "youtube" },
-  { label: "Copy page link", action: "share", icon: "share" },
 ];
 
 const links = [
@@ -116,16 +115,18 @@ linksContainer.innerHTML = links
 
 normalizeLogoImages();
 
-copyButton.addEventListener("click", async () => {
-  const url = window.location.href;
+if (copyButton) {
+  copyButton.addEventListener("click", async () => {
+    const url = window.location.href;
 
-  try {
-    await navigator.clipboard.writeText(url);
-    showToast("Link copied");
-  } catch {
-    showToast(url);
-  }
-});
+    try {
+      await navigator.clipboard.writeText(url);
+      showToast("Link copied");
+    } catch {
+      showToast(url);
+    }
+  });
+}
 
 function showToast(message) {
   toast.textContent = message;
