@@ -234,8 +234,8 @@ h1 {
   min-width: 0;
   justify-self: center;
   overflow-wrap: anywhere;
-  font-size: 1.04rem;
-  font-weight: 650;
+  font-size: 1.05rem;
+  font-weight: 400;
   line-height: 1.25;
   text-align: center;
 }
@@ -332,7 +332,7 @@ h1 {
   }
 
   .link-title {
-    font-size: 1rem;
+    font-size: 1.02rem;
   }
 }
 
