@@ -15,6 +15,8 @@
   --shadow: 0 18px 55px rgba(0, 28, 84, 0.28);
   --radius: 14px;
   --content-width: 548px;
+  --card-logo-size: 48px;
+  --card-logo-inset: 12px;
   --title-font: "Fredoka", "Arial Rounded MT Bold", "Avenir Next Rounded", ui-rounded, sans-serif;
 }
 
@@ -177,9 +179,9 @@ h1 {
 .link-card {
   position: relative;
   display: grid;
-  min-height: 60px;
-  padding: 8px 20px 8px 12px;
-  grid-template-columns: 56px 1fr 56px;
+  min-height: calc(var(--card-logo-size) + var(--card-logo-inset) * 2);
+  padding: var(--card-logo-inset) 18px var(--card-logo-inset) var(--card-logo-inset);
+  grid-template-columns: var(--card-logo-size) 1fr var(--card-logo-size);
   align-items: center;
   color: #111827;
   overflow: hidden;
@@ -207,8 +209,8 @@ h1 {
 
 .logo-slot {
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: var(--card-logo-size);
+  height: var(--card-logo-size);
   place-items: center;
   overflow: hidden;
   color: #64748b;
@@ -275,6 +277,11 @@ h1 {
 }
 
 @media (max-width: 620px) {
+  :root {
+    --card-logo-size: 46px;
+    --card-logo-inset: 11px;
+  }
+
   .page-shell {
     padding: 22px 14px 28px;
   }
@@ -315,14 +322,10 @@ h1 {
   }
 
   .link-card {
-    min-height: 60px;
     padding-right: 12px;
-    grid-template-columns: 52px 1fr 52px;
   }
 
   .logo-slot {
-    width: 46px;
-    height: 46px;
     border-radius: 10px;
   }
 
