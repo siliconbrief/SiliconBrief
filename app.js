@@ -61,12 +61,6 @@ const icons = {
       <path d="M12 2v13"></path>
     </svg>
   `,
-  arrow: `
-    <svg class="icon-line link-arrow" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M5 12h14"></path>
-      <path d="m13 6 6 6-6 6"></path>
-    </svg>
-  `,
 };
 
 const avatarSlot = document.querySelector("[data-avatar-placeholder]");
@@ -116,7 +110,6 @@ linksContainer.innerHTML = links
       <a class="link-card" href="${item.href}"${target}>
         <span class="logo-slot" data-kind="${item.shape || "square"}">${logo}</span>
         <span class="link-title">${item.title}</span>
-        ${icons.arrow}
       </a>
     `;
   })
