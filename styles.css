@@ -208,16 +208,31 @@ h1 {
   border: 0;
   border-radius: var(--radius);
   box-shadow: none;
-  transition: none;
+  transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
 .link-card::before {
-  display: none;
-  content: none;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 12% 50%, rgba(56, 189, 248, 0.28), transparent 32%),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.12), rgba(255, 255, 255, 0) 58%);
+  opacity: 0;
+  transition: opacity 180ms ease;
 }
 
-.link-card:hover {
+.link-card:hover,
+.link-card:focus-visible {
   background: #fff;
+  box-shadow: 0 12px 26px rgba(0, 30, 95, 0.18);
+  transform: translateY(-1px);
+}
+
+.link-card:hover::before,
+.link-card:focus-visible::before {
+  opacity: 1;
 }
 
 .link-card:focus-visible,
@@ -227,6 +242,8 @@ h1 {
 }
 
 .logo-slot {
+  position: relative;
+  z-index: 1;
   display: grid;
   width: var(--card-logo-size);
   height: var(--card-logo-size);
@@ -262,6 +279,8 @@ h1 {
 }
 
 .link-title {
+  position: relative;
+  z-index: 1;
   min-width: 0;
   justify-self: center;
   overflow-wrap: anywhere;
