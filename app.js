@@ -9,6 +9,7 @@ const socials = [
   { label: "YouTube", href: "https://www.youtube.com/@siliconbrief", icon: "youtube" },
   { label: "Instagram", href: "https://www.instagram.com/siliconbrief/", icon: "instagram" },
   { label: "X", href: "https://x.com/siliconbrief", icon: "x" },
+  { label: "Copy page link", action: "share", icon: "share" },
 ];
 
 const links = [
@@ -47,6 +48,13 @@ const icons = {
       <path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"></path>
     </svg>
   `,
+  share: `
+    <svg class="icon-line" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+      <path d="m16 6-4-4-4 4"></path>
+      <path d="M12 2v13"></path>
+    </svg>
+  `,
   arrow: `
     <svg class="icon-line link-arrow" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M5 12h14"></path>
@@ -59,7 +67,6 @@ const avatarSlot = document.querySelector("[data-avatar-placeholder]");
 const subscribeLink = document.querySelector(".pill-button");
 const socialsContainer = document.querySelector("[data-socials]");
 const linksContainer = document.querySelector("[data-links]");
-const copyButton = document.querySelector("[data-copy-link]");
 const toast = document.querySelector("[data-toast]");
 
 if (profile.avatar) {
@@ -71,6 +78,14 @@ subscribeLink.href = profile.subscribeUrl;
 socialsContainer.innerHTML = socials
   .map((item) => {
     const content = icons[item.icon] || `<span aria-hidden="true">${item.text}</span>`;
+    if (item.action === "share") {
+      return `
+        <button class="social-link" type="button" data-copy-link aria-label="${item.label}">
+          ${content}
+        </button>
+      `;
+    }
+
     const external = item.href.startsWith("http");
     const target = external ? ` target="_blank" rel="noopener noreferrer"` : "";
 
@@ -81,6 +96,8 @@ socialsContainer.innerHTML = socials
     `;
   })
   .join("");
+
+const copyButton = document.querySelector("[data-copy-link]");
 
 linksContainer.innerHTML = links
   .map((item) => {

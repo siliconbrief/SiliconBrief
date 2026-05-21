@@ -66,7 +66,7 @@ button {
 .top-actions {
   display: grid;
   width: min(100%, 610px);
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
 }
 
@@ -95,14 +95,12 @@ button {
   transform: translateY(-1px);
 }
 
-.button-icon,
-.icon-button {
+.button-icon {
   display: inline-grid;
   place-items: center;
 }
 
-.button-icon svg,
-.icon-button svg {
+.button-icon svg {
   width: 17px;
   height: 17px;
   fill: none;
@@ -117,26 +115,6 @@ button {
   height: 18px;
   fill: currentColor;
   stroke: none;
-}
-
-.icon-button {
-  width: 34px;
-  height: 34px;
-  grid-column: 3;
-  justify-self: end;
-  color: #64748b;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.86);
-  border-radius: 999px;
-  cursor: pointer;
-  box-shadow: 0 10px 32px rgba(0, 25, 72, 0.16);
-  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
-}
-
-.icon-button:hover {
-  color: #0f172a;
-  background: #ffffff;
-  transform: translateY(-1px);
 }
 
 .profile {
@@ -206,7 +184,11 @@ h1 {
   color: rgba(255, 255, 255, 0.93);
   font-size: 0.78rem;
   font-weight: 900;
+  padding: 0;
+  background: transparent;
+  border: 0;
   border-radius: 10px;
+  cursor: pointer;
   transition: transform 160ms ease, background-color 160ms ease;
 }
 
@@ -266,7 +248,6 @@ h1 {
 
 .link-card:focus-visible,
 .pill-button:focus-visible,
-.icon-button:focus-visible,
 .social-link:focus-visible {
   outline: 3px solid rgba(255, 255, 255, 0.72);
   outline-offset: 4px;
@@ -358,18 +339,10 @@ h1 {
     padding: 16px 14px 28px;
   }
 
-  .top-actions {
-    grid-template-columns: auto 1fr auto;
-  }
-
   .pill-button {
     grid-column: 1;
     padding: 0 13px;
     font-size: 0.72rem;
-  }
-
-  .icon-button {
-    grid-column: 3;
   }
 
   .profile {
