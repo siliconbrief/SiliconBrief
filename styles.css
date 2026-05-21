@@ -65,10 +65,10 @@ button {
 
 .profile {
   display: grid;
-  width: min(100%, 560px);
+  width: min(100%, 620px);
   margin-top: 0;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 10px 18px;
+  gap: 14px 20px;
   align-items: center;
   justify-content: center;
   text-align: left;
@@ -76,8 +76,8 @@ button {
 
 .avatar-slot {
   display: grid;
-  width: 144px;
-  height: 144px;
+  width: 156px;
+  height: 156px;
   grid-row: 1 / span 2;
   justify-self: start;
   place-items: center;
@@ -105,27 +105,28 @@ h1 {
   align-self: end;
   color: #fff7f2;
   font-family: var(--title-font);
-  font-size: 4.08rem;
+  font-size: 4.45rem;
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: 0;
   text-shadow: 0 8px 22px rgba(0, 24, 80, 0.16);
+  transform: translateY(-5px);
 }
 
 .socials {
   display: flex;
-  min-height: 36px;
+  min-height: 40px;
   align-items: center;
   justify-content: flex-start;
   align-self: start;
-  gap: 14px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
 .social-link {
   display: grid;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   place-items: center;
   color: rgba(255, 255, 255, 0.93);
   font-size: 0.78rem;
@@ -140,8 +141,8 @@ h1 {
 
 .social-link svg,
 .logo-slot svg {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
 }
 
 .social-link .icon-brand,
@@ -167,7 +168,7 @@ h1 {
 
 .links {
   display: grid;
-  width: min(100%, 560px);
+  width: min(100%, 532px);
   margin-top: 24px;
   gap: 12px;
 }
@@ -277,33 +278,35 @@ h1 {
   .profile {
     margin-top: 0;
     grid-template-columns: auto minmax(0, 1fr);
-    gap: 8px 12px;
+    gap: 11px 13px;
   }
 
   .avatar-slot {
-    width: 96px;
-    height: 96px;
+    width: 104px;
+    height: 104px;
   }
 
   h1 {
-    font-size: 2.35rem;
+    font-size: 2.52rem;
+    transform: translateY(-3px);
   }
 
   .socials {
-    gap: 9px;
+    gap: 10px;
   }
 
   .social-link {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
   }
 
   .social-link svg {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
   }
 
   .links {
+    width: min(100%, 520px);
     margin-top: 22px;
     gap: 10px;
   }
@@ -327,16 +330,16 @@ h1 {
 
 @media (max-width: 380px) {
   .profile {
-    gap: 8px 10px;
+    gap: 10px 10px;
   }
 
   .avatar-slot {
-    width: 84px;
-    height: 84px;
+    width: 90px;
+    height: 90px;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.12rem;
   }
 }
 
