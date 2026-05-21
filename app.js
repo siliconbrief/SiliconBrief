@@ -12,12 +12,12 @@ const socials = [
 ];
 
 const links = [
-  { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=4", initials: "IN" },
-  { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png?v=4", initials: "HL" },
-  { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png?v=4", initials: "TY" },
-  { title: "Verdent", href: "https://www.verdent.ai/", image: "logos/Verdent.png?v=4", initials: "VE" },
-  { title: "CrePal", href: "https://crepal.ai/main", image: "logos/CrePal.png?v=4", initials: "CP" },
-  { title: "Trip.com", href: "https://www.trip.com/t/8ebm0xr7mT2", image: "logos/Trip.png?v=4", initials: "TR" },
+  { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=5", initials: "IN" },
+  { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png?v=5", initials: "HL" },
+  { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png?v=5", initials: "TY" },
+  { title: "Verdent", href: "https://www.verdent.ai/", image: "logos/Verdent.png?v=5", initials: "VE" },
+  { title: "CrePal", href: "https://crepal.ai/main", image: "logos/CrePal.png?v=5", initials: "CP" },
+  { title: "Trip.com", href: "https://www.trip.com/t/8ebm0xr7mT2", image: "logos/Trip.png?v=5", initials: "TR" },
 ];
 
 const icons = {
@@ -178,8 +178,8 @@ function normalizeLogoImage(img) {
 
   const cropWidth = bounds.right - bounds.left + 1;
   const cropHeight = bounds.bottom - bounds.top + 1;
-  const outputSize = 128;
-  const outputPadding = 5;
+  const outputSize = 256;
+  const outputPadding = 10;
   const maxLogoSize = outputSize - outputPadding * 2;
   const scale = Math.min(maxLogoSize / cropWidth, maxLogoSize / cropHeight);
   const drawWidth = Math.round(cropWidth * scale);
