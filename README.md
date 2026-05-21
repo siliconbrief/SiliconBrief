@@ -10,6 +10,7 @@ A lightweight, self-hosted link-in-bio page with no framework, no build step, an
 - Replace the profile placeholder by setting `profile.avatar` in `app.js`.
 - Tune colors, spacing, and card styles in `styles.css`.
 - The title uses the self-hosted Fredoka font in `assets/fonts`.
+- Vercel Web Analytics is loaded from `index.html` for static hosting.
 
 Example image path:
 
