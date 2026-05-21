@@ -189,12 +189,6 @@ h1 {
   text-shadow: 0 6px 16px rgba(0, 24, 80, 0.18);
 }
 
-.profile-topics li + li::before {
-  margin-right: 16px;
-  color: rgba(255, 255, 255, 0.56);
-  content: "|";
-}
-
 .links {
   display: grid;
   width: min(100%, var(--content-width));
@@ -366,10 +360,6 @@ h1 {
     gap: 8px 12px;
     margin-top: 16px;
     font-size: 0.78rem;
-  }
-
-  .profile-topics li + li::before {
-    margin-right: 12px;
   }
 
   .links {
