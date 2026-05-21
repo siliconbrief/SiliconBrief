@@ -99,7 +99,7 @@ const copyButton = document.querySelector("[data-copy-link]");
 linksContainer.innerHTML = links
   .map((item) => {
     const logo = item.image
-      ? `<img src="${item.image}" alt="" loading="lazy">`
+      ? `<img src="${item.image}" alt="" loading="lazy" decoding="async" data-normalize-logo>`
       : item.icon
         ? icons[item.icon]
       : `<span aria-hidden="true">${item.initials}</span>`;
@@ -114,6 +114,8 @@ linksContainer.innerHTML = links
     `;
   })
   .join("");
+
+normalizeLogoImages();
 
 copyButton.addEventListener("click", async () => {
   const url = window.location.href;
@@ -133,4 +135,130 @@ function showToast(message) {
   showToast.timer = window.setTimeout(() => {
     toast.classList.remove("is-visible");
   }, 1800);
+}
+
+function normalizeLogoImages() {
+  document.querySelectorAll("[data-normalize-logo]").forEach((img) => {
+    if (img.complete && img.naturalWidth) {
+      normalizeLogoImage(img);
+      return;
+    }
+
+    img.addEventListener("load", () => normalizeLogoImage(img), { once: true });
+  });
+}
+
+function normalizeLogoImage(img) {
+  if (img.dataset.normalized === "true" || !img.naturalWidth || !img.naturalHeight) {
+    return;
+  }
+
+  const source = document.createElement("canvas");
+  source.width = img.naturalWidth;
+  source.height = img.naturalHeight;
+
+  const sourceContext = source.getContext("2d", { willReadFrequently: true });
+  if (!sourceContext) {
+    return;
+  }
+
+  sourceContext.drawImage(img, 0, 0);
+
+  let imageData;
+  try {
+    imageData = sourceContext.getImageData(0, 0, source.width, source.height);
+  } catch {
+    return;
+  }
+
+  const bounds = getVisibleLogoBounds(imageData);
+  if (!bounds) {
+    return;
+  }
+
+  const cropWidth = bounds.right - bounds.left + 1;
+  const cropHeight = bounds.bottom - bounds.top + 1;
+  const outputSize = 128;
+  const outputPadding = 5;
+  const maxLogoSize = outputSize - outputPadding * 2;
+  const scale = Math.min(maxLogoSize / cropWidth, maxLogoSize / cropHeight);
+  const drawWidth = Math.round(cropWidth * scale);
+  const drawHeight = Math.round(cropHeight * scale);
+  const drawX = Math.round((outputSize - drawWidth) / 2);
+  const drawY = Math.round((outputSize - drawHeight) / 2);
+  const output = document.createElement("canvas");
+  output.width = outputSize;
+  output.height = outputSize;
+
+  const outputContext = output.getContext("2d");
+  if (!outputContext) {
+    return;
+  }
+
+  outputContext.imageSmoothingEnabled = true;
+  outputContext.imageSmoothingQuality = "high";
+  outputContext.drawImage(source, bounds.left, bounds.top, cropWidth, cropHeight, drawX, drawY, drawWidth, drawHeight);
+
+  img.dataset.normalized = "true";
+  img.src = output.toDataURL("image/png");
+}
+
+function getVisibleLogoBounds(imageData) {
+  const { data, width, height } = imageData;
+  const hasTransparency = hasTransparentPixels(data);
+  let top = height;
+  let right = -1;
+  let bottom = -1;
+  let left = width;
+
+  for (let y = 0; y < height; y += 1) {
+    for (let x = 0; x < width; x += 1) {
+      const index = (y * width + x) * 4;
+      if (!isLogoPixel(data, index, hasTransparency)) {
+        continue;
+      }
+
+      top = Math.min(top, y);
+      right = Math.max(right, x);
+      bottom = Math.max(bottom, y);
+      left = Math.min(left, x);
+    }
+  }
+
+  if (right < left || bottom < top) {
+    return null;
+  }
+
+  return { top, right, bottom, left };
+}
+
+function hasTransparentPixels(data) {
+  for (let index = 3; index < data.length; index += 4) {
+    if (data[index] < 250) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function isLogoPixel(data, index, hasTransparency) {
+  const red = data[index];
+  const green = data[index + 1];
+  const blue = data[index + 2];
+  const alpha = data[index + 3];
+
+  if (alpha <= 18) {
+    return false;
+  }
+
+  if (hasTransparency) {
+    return true;
+  }
+
+  const maxChannel = Math.max(red, green, blue);
+  const minChannel = Math.min(red, green, blue);
+  const isWhiteMatte = minChannel > 244 && maxChannel - minChannel < 10;
+
+  return !isWhiteMatte;
 }
