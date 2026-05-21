@@ -9,7 +9,6 @@ const socials = [
   { label: "Instagram", href: "https://www.instagram.com/siliconbrief/", icon: "instagram" },
   { label: "X", href: "https://x.com/siliconbrief", icon: "x" },
   { label: "YouTube", href: "https://www.youtube.com/@siliconbrief", icon: "youtube" },
-  { label: "Subscribe", href: profile.subscribeUrl, icon: "bell" },
   { label: "Copy page link", action: "share", icon: "share" },
 ];
 
