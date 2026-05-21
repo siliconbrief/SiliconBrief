@@ -1,10 +1,10 @@
 const profile = {
   avatar: "Profile.png",
-  subscribeUrl: "mailto:hello@example.com",
+  subscribeUrl: "mailto:leonsmedia@iflytalent.com",
 };
 
 const socials = [
-  { label: "Email", href: "mailto:hello@example.com", icon: "mail" },
+  { label: "Email", href: "mailto:leonsmedia@iflytalent.com", icon: "mail" },
   { label: "TikTok", href: "https://www.tiktok.com/@siliconbrief", icon: "tiktok" },
   { label: "Instagram", href: "https://www.instagram.com/siliconbrief/", icon: "instagram" },
   { label: "X", href: "https://x.com/siliconbrief", icon: "x" },
@@ -14,7 +14,7 @@ const socials = [
 ];
 
 const links = [
-  { title: "Inquiries", href: "mailto:hello@example.com", image: "logos/Mail.png", initials: "IN" },
+  { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png", initials: "IN" },
   { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png", initials: "HL" },
   { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png", initials: "TY" },
   { title: "Verdent", href: "https://www.verdent.ai/", image: "logos/Verdent.png", initials: "VE" },
