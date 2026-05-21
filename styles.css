@@ -65,7 +65,7 @@ button {
 
 .profile {
   display: grid;
-  width: min(100%, 610px);
+  width: min(100%, 560px);
   margin-top: 0;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 10px 18px;
@@ -167,7 +167,7 @@ h1 {
 
 .links {
   display: grid;
-  width: min(100%, 610px);
+  width: min(100%, 560px);
   margin-top: 24px;
   gap: 12px;
 }
