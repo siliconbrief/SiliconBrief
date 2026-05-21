@@ -5,12 +5,12 @@ const profile = {
 
 const socials = [
   { label: "Email", href: "mailto:hello@example.com", icon: "mail" },
-  { label: "Instagram", href: "https://www.instagram.com/siliconbrief/", icon: "instagram" },
   { label: "TikTok", href: "https://www.tiktok.com/@siliconbrief", icon: "tiktok" },
+  { label: "Instagram", href: "https://www.instagram.com/siliconbrief/", icon: "instagram" },
+  { label: "YouTube", href: "https://www.youtube.com/@siliconbrief", icon: "youtube" },
   { label: "X", href: "https://x.com/siliconbrief", icon: "x" },
   { label: "Subscribe", href: profile.subscribeUrl, icon: "bell" },
   { label: "Copy page link", action: "share", icon: "share" },
-  { label: "YouTube", href: "https://www.youtube.com/@siliconbrief", icon: "youtube" },
 ];
 
 const links = [
