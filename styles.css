@@ -243,7 +243,6 @@ h1 {
   border: 0;
   border-radius: var(--logo-radius);
   box-shadow: none;
-  clip-path: inset(0 round var(--logo-radius));
 }
 
 .logo-slot[data-kind="circle"] {
@@ -261,8 +260,6 @@ h1 {
   height: 100%;
   padding: 0;
   object-fit: contain;
-  border-radius: var(--logo-radius);
-  clip-path: inset(0 round var(--logo-radius));
   filter: none;
   opacity: 1;
 }

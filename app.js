@@ -12,12 +12,12 @@ const socials = [
 ];
 
 const links = [
-  { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=5", initials: "IN" },
-  { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png?v=5", initials: "HL" },
-  { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png?v=5", initials: "TY" },
-  { title: "Verdent", href: "https://www.verdent.ai/", image: "logos/Verdent.png?v=5", initials: "VE" },
-  { title: "CrePal", href: "https://crepal.ai/main", image: "logos/CrePal.png?v=5", initials: "CP" },
-  { title: "Trip.com", href: "https://www.trip.com/t/8ebm0xr7mT2", image: "logos/Trip.png?v=5", initials: "TR" },
+  { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN" },
+  { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png?v=7", initials: "HL" },
+  { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png?v=7", initials: "TY" },
+  { title: "Verdent", href: "https://www.verdent.ai/", image: "logos/Verdent.png?v=7", initials: "VE" },
+  { title: "CrePal", href: "https://crepal.ai/main", image: "logos/CrePal.png?v=7", initials: "CP" },
+  { title: "Trip.com", href: "https://www.trip.com/t/8ebm0xr7mT2", image: "logos/Trip.png?v=7", initials: "TR" },
 ];
 
 const icons = {
@@ -97,7 +97,7 @@ const copyButton = document.querySelector("[data-copy-link]");
 linksContainer.innerHTML = links
   .map((item) => {
     const logo = item.image
-      ? `<img src="${item.image}" alt="" loading="lazy" decoding="async" data-normalize-logo>`
+      ? `<img src="${item.image}" alt="" loading="lazy" decoding="async">`
       : item.icon
         ? icons[item.icon]
       : `<span aria-hidden="true">${item.initials}</span>`;
@@ -112,8 +112,6 @@ linksContainer.innerHTML = links
     `;
   })
   .join("");
-
-normalizeLogoImages();
 
 if (copyButton) {
   copyButton.addEventListener("click", async () => {
@@ -135,150 +133,4 @@ function showToast(message) {
   showToast.timer = window.setTimeout(() => {
     toast.classList.remove("is-visible");
   }, 1800);
-}
-
-function normalizeLogoImages() {
-  document.querySelectorAll("[data-normalize-logo]").forEach((img) => {
-    if (img.complete && img.naturalWidth) {
-      normalizeLogoImage(img);
-      return;
-    }
-
-    img.addEventListener("load", () => normalizeLogoImage(img), { once: true });
-  });
-}
-
-function normalizeLogoImage(img) {
-  if (img.dataset.normalized === "true" || !img.naturalWidth || !img.naturalHeight) {
-    return;
-  }
-
-  const source = document.createElement("canvas");
-  source.width = img.naturalWidth;
-  source.height = img.naturalHeight;
-
-  const sourceContext = source.getContext("2d", { willReadFrequently: true });
-  if (!sourceContext) {
-    return;
-  }
-
-  sourceContext.drawImage(img, 0, 0);
-
-  let imageData;
-  try {
-    imageData = sourceContext.getImageData(0, 0, source.width, source.height);
-  } catch {
-    return;
-  }
-
-  const bounds = getVisibleLogoBounds(imageData);
-  if (!bounds) {
-    return;
-  }
-
-  const cropWidth = bounds.right - bounds.left + 1;
-  const cropHeight = bounds.bottom - bounds.top + 1;
-  const outputSize = 256;
-  const outputPadding = 10;
-  const maxLogoSize = outputSize - outputPadding * 2;
-  const scale = Math.min(maxLogoSize / cropWidth, maxLogoSize / cropHeight);
-  const drawWidth = Math.round(cropWidth * scale);
-  const drawHeight = Math.round(cropHeight * scale);
-  const drawX = Math.round((outputSize - drawWidth) / 2);
-  const drawY = Math.round((outputSize - drawHeight) / 2);
-  const output = document.createElement("canvas");
-  output.width = outputSize;
-  output.height = outputSize;
-
-  const outputContext = output.getContext("2d");
-  if (!outputContext) {
-    return;
-  }
-
-  outputContext.imageSmoothingEnabled = true;
-  outputContext.imageSmoothingQuality = "high";
-  outputContext.save();
-  traceRoundRect(outputContext, drawX, drawY, drawWidth, drawHeight, Math.min(drawWidth, drawHeight) * 0.22);
-  outputContext.clip();
-  outputContext.drawImage(source, bounds.left, bounds.top, cropWidth, cropHeight, drawX, drawY, drawWidth, drawHeight);
-  outputContext.restore();
-
-  img.dataset.normalized = "true";
-  img.src = output.toDataURL("image/png");
-}
-
-function traceRoundRect(context, x, y, width, height, radius) {
-  const safeRadius = Math.min(radius, width / 2, height / 2);
-
-  context.beginPath();
-  context.moveTo(x + safeRadius, y);
-  context.lineTo(x + width - safeRadius, y);
-  context.quadraticCurveTo(x + width, y, x + width, y + safeRadius);
-  context.lineTo(x + width, y + height - safeRadius);
-  context.quadraticCurveTo(x + width, y + height, x + width - safeRadius, y + height);
-  context.lineTo(x + safeRadius, y + height);
-  context.quadraticCurveTo(x, y + height, x, y + height - safeRadius);
-  context.lineTo(x, y + safeRadius);
-  context.quadraticCurveTo(x, y, x + safeRadius, y);
-  context.closePath();
-}
-
-function getVisibleLogoBounds(imageData) {
-  const { data, width, height } = imageData;
-  const hasTransparency = hasTransparentPixels(data);
-  let top = height;
-  let right = -1;
-  let bottom = -1;
-  let left = width;
-
-  for (let y = 0; y < height; y += 1) {
-    for (let x = 0; x < width; x += 1) {
-      const index = (y * width + x) * 4;
-      if (!isLogoPixel(data, index, hasTransparency)) {
-        continue;
-      }
-
-      top = Math.min(top, y);
-      right = Math.max(right, x);
-      bottom = Math.max(bottom, y);
-      left = Math.min(left, x);
-    }
-  }
-
-  if (right < left || bottom < top) {
-    return null;
-  }
-
-  return { top, right, bottom, left };
-}
-
-function hasTransparentPixels(data) {
-  for (let index = 3; index < data.length; index += 4) {
-    if (data[index] < 250) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-function isLogoPixel(data, index, hasTransparency) {
-  const red = data[index];
-  const green = data[index + 1];
-  const blue = data[index + 2];
-  const alpha = data[index + 3];
-
-  if (alpha <= 18) {
-    return false;
-  }
-
-  if (hasTransparency) {
-    return true;
-  }
-
-  const maxChannel = Math.max(red, green, blue);
-  const minChannel = Math.min(red, green, blue);
-  const isWhiteMatte = minChannel > 244 && maxChannel - minChannel < 10;
-
-  return !isWhiteMatte;
 }
