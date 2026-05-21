@@ -14,12 +14,12 @@ const socials = [
 ];
 
 const links = [
-  { title: "Inquiries", href: "mailto:hello@example.com", image: "", icon: "mail", initials: "IN", shape: "circle" },
-  { title: "Hollyland: Lark A1", href: "#", image: "", initials: "HL" },
-  { title: "Typeless", href: "#", image: "", initials: "TY" },
-  { title: "Verdent", href: "#", image: "", initials: "VE" },
-  { title: "CrePal", href: "#", image: "", initials: "CP" },
-  { title: "Trip.com", href: "#", image: "", initials: "TR" },
+  { title: "Inquiries", href: "mailto:hello@example.com", image: "logos/Mail.png", initials: "IN" },
+  { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png", initials: "HL" },
+  { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png", initials: "TY" },
+  { title: "Verdent", href: "https://www.verdent.ai/", image: "logos/Verdent.png", initials: "VE" },
+  { title: "CrePal", href: "https://crepal.ai/main", image: "logos/CrePal.png", initials: "CP" },
+  { title: "Trip.com", href: "https://www.trip.com/t/8ebm0xr7mT2", image: "logos/Trip.png", initials: "TR" },
 ];
 
 const icons = {
