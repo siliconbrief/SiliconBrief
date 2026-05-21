@@ -12,12 +12,12 @@ const socials = [
 ];
 
 const links = [
-  { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=2", initials: "IN" },
-  { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png?v=2", initials: "HL" },
-  { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png?v=2", initials: "TY" },
-  { title: "Verdent", href: "https://www.verdent.ai/", image: "logos/Verdent.png?v=2", initials: "VE" },
-  { title: "CrePal", href: "https://crepal.ai/main", image: "logos/CrePal.png?v=2", initials: "CP" },
-  { title: "Trip.com", href: "https://www.trip.com/t/8ebm0xr7mT2", image: "logos/Trip.png?v=2", initials: "TR" },
+  { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=3", initials: "IN" },
+  { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png?v=3", initials: "HL" },
+  { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png?v=3", initials: "TY" },
+  { title: "Verdent", href: "https://www.verdent.ai/", image: "logos/Verdent.png?v=3", initials: "VE" },
+  { title: "CrePal", href: "https://crepal.ai/main", image: "logos/CrePal.png?v=3", initials: "CP" },
+  { title: "Trip.com", href: "https://www.trip.com/t/8ebm0xr7mT2", image: "logos/Trip.png?v=3", initials: "TR" },
 ];
 
 const icons = {
@@ -197,10 +197,30 @@ function normalizeLogoImage(img) {
 
   outputContext.imageSmoothingEnabled = true;
   outputContext.imageSmoothingQuality = "high";
+  outputContext.save();
+  traceRoundRect(outputContext, drawX, drawY, drawWidth, drawHeight, Math.min(drawWidth, drawHeight) * 0.22);
+  outputContext.clip();
   outputContext.drawImage(source, bounds.left, bounds.top, cropWidth, cropHeight, drawX, drawY, drawWidth, drawHeight);
+  outputContext.restore();
 
   img.dataset.normalized = "true";
   img.src = output.toDataURL("image/png");
+}
+
+function traceRoundRect(context, x, y, width, height, radius) {
+  const safeRadius = Math.min(radius, width / 2, height / 2);
+
+  context.beginPath();
+  context.moveTo(x + safeRadius, y);
+  context.lineTo(x + width - safeRadius, y);
+  context.quadraticCurveTo(x + width, y, x + width, y + safeRadius);
+  context.lineTo(x + width, y + height - safeRadius);
+  context.quadraticCurveTo(x + width, y + height, x + width - safeRadius, y + height);
+  context.lineTo(x + safeRadius, y + height);
+  context.quadraticCurveTo(x, y + height, x, y + height - safeRadius);
+  context.lineTo(x, y + safeRadius);
+  context.quadraticCurveTo(x, y, x + safeRadius, y);
+  context.closePath();
 }
 
 function getVisibleLogoBounds(imageData) {
