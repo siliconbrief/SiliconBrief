@@ -58,69 +58,15 @@ button {
   width: min(100%, 720px);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 20px 22px 34px;
+  padding: 30px 22px 34px;
   flex-direction: column;
   align-items: center;
-}
-
-.top-actions {
-  display: grid;
-  width: min(100%, 610px);
-  grid-template-columns: auto 1fr;
-  align-items: center;
-}
-
-.pill-button {
-  display: inline-flex;
-  min-height: 34px;
-  padding: 0 16px;
-  grid-column: 1;
-  align-items: center;
-  gap: 8px;
-  justify-self: start;
-  color: #4b5563;
-  font-size: 0.76rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.82);
-  border-radius: 999px;
-  box-shadow: 0 10px 32px rgba(0, 25, 72, 0.16);
-  transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
-}
-
-.pill-button:hover {
-  background: #ffffff;
-  box-shadow: 0 14px 38px rgba(0, 25, 72, 0.22);
-  transform: translateY(-1px);
-}
-
-.button-icon {
-  display: inline-grid;
-  place-items: center;
-}
-
-.button-icon svg {
-  width: 17px;
-  height: 17px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2.5;
-}
-
-.button-icon .icon-solid {
-  width: 16px;
-  height: 18px;
-  fill: currentColor;
-  stroke: none;
 }
 
 .profile {
   display: grid;
   width: min(100%, 610px);
-  margin-top: 30px;
+  margin-top: 0;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 10px 18px;
   align-items: center;
@@ -199,6 +145,7 @@ h1 {
 }
 
 .social-link .icon-brand,
+.social-link .icon-solid,
 .logo-slot .icon-brand {
   fill: currentColor;
   stroke: none;
@@ -247,7 +194,6 @@ h1 {
 }
 
 .link-card:focus-visible,
-.pill-button:focus-visible,
 .social-link:focus-visible {
   outline: 3px solid rgba(255, 255, 255, 0.72);
   outline-offset: 4px;
@@ -336,17 +282,11 @@ h1 {
 
 @media (max-width: 620px) {
   .page-shell {
-    padding: 16px 14px 28px;
-  }
-
-  .pill-button {
-    grid-column: 1;
-    padding: 0 13px;
-    font-size: 0.72rem;
+    padding: 22px 14px 28px;
   }
 
   .profile {
-    margin-top: 24px;
+    margin-top: 0;
     grid-template-columns: auto minmax(0, 1fr);
     gap: 8px 12px;
   }

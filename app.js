@@ -8,6 +8,7 @@ const socials = [
   { label: "Instagram", href: "https://www.instagram.com/siliconbrief/", icon: "instagram" },
   { label: "TikTok", href: "https://www.tiktok.com/@siliconbrief", icon: "tiktok" },
   { label: "X", href: "https://x.com/siliconbrief", icon: "x" },
+  { label: "Subscribe", href: profile.subscribeUrl, icon: "bell" },
   { label: "Copy page link", action: "share", icon: "share" },
   { label: "YouTube", href: "https://www.youtube.com/@siliconbrief", icon: "youtube" },
 ];
@@ -48,6 +49,11 @@ const icons = {
       <path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"></path>
     </svg>
   `,
+  bell: `
+    <svg class="icon-solid" viewBox="0 0 448 512" aria-hidden="true">
+      <path d="M224 0c-17.7 0-32 14.3-32 32v19.2C119 66 64 130.6 64 208v25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416h400c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm0 512a64 64 0 0 0 64-64H160a64 64 0 0 0 64 64z"></path>
+    </svg>
+  `,
   share: `
     <svg class="icon-line" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
@@ -64,7 +70,6 @@ const icons = {
 };
 
 const avatarSlot = document.querySelector("[data-avatar-placeholder]");
-const subscribeLink = document.querySelector(".pill-button");
 const socialsContainer = document.querySelector("[data-socials]");
 const linksContainer = document.querySelector("[data-links]");
 const toast = document.querySelector("[data-toast]");
@@ -72,8 +77,6 @@ const toast = document.querySelector("[data-toast]");
 if (profile.avatar) {
   avatarSlot.innerHTML = `<img src="${profile.avatar}" alt="Silicon Brief profile photo">`;
 }
-
-subscribeLink.href = profile.subscribeUrl;
 
 socialsContainer.innerHTML = socials
   .map((item) => {
