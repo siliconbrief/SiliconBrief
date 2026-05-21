@@ -179,19 +179,19 @@ h1 {
   padding: 8px 20px 8px 12px;
   grid-template-columns: 56px 1fr 56px;
   align-items: center;
-  color: #171717;
+  color: #f8fbff;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.96) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+    linear-gradient(135deg, rgba(23, 105, 255, 0.82) 0%, rgba(11, 61, 158, 0.88) 48%, rgba(3, 24, 67, 0.94) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 -10px 18px rgba(15, 23, 42, 0.035),
-    0 16px 42px rgba(0, 28, 84, 0.24);
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -18px 28px rgba(0, 10, 35, 0.2),
+    0 18px 42px rgba(0, 18, 60, 0.3);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  transition: transform 170ms ease, box-shadow 170ms ease;
+  transition: transform 170ms ease, background 170ms ease, box-shadow 170ms ease;
 }
 
 .link-card::before {
@@ -199,15 +199,19 @@ h1 {
   inset: 0;
   pointer-events: none;
   content: "";
-  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.62) 48%, transparent 100%);
-  opacity: 0.36;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.26), transparent 30%),
+    linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.18) 48%, transparent 100%);
+  opacity: 0.9;
 }
 
 .link-card:hover {
+  background:
+    linear-gradient(135deg, rgba(35, 120, 255, 0.88) 0%, rgba(14, 70, 177, 0.92) 48%, rgba(4, 29, 78, 0.96) 100%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.96),
-    inset 0 -10px 18px rgba(15, 23, 42, 0.028),
-    0 20px 48px rgba(0, 28, 84, 0.29);
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    inset 0 -18px 28px rgba(0, 10, 35, 0.18),
+    0 22px 52px rgba(0, 18, 60, 0.36);
   transform: translateY(-2px);
 }
 
@@ -223,17 +227,17 @@ h1 {
   height: 42px;
   place-items: center;
   overflow: hidden;
-  color: #64748b;
+  color: #eff6ff;
   font-size: 0.76rem;
   font-weight: 900;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(226, 232, 240, 0.62)),
-    #e5e7eb;
-  border: 1px solid rgba(148, 163, 184, 0.34);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08)),
+    rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 11px;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.76),
-    0 6px 16px rgba(15, 23, 42, 0.08);
+    0 8px 18px rgba(0, 10, 35, 0.14);
 }
 
 .logo-slot[data-kind="circle"] {
@@ -259,6 +263,7 @@ h1 {
   font-weight: 350;
   line-height: 1.25;
   text-align: center;
+  text-shadow: 0 1px 10px rgba(0, 10, 35, 0.18);
 }
 
 .status-toast {
