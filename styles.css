@@ -182,16 +182,16 @@ h1 {
   color: #171717;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(242, 247, 255, 0.96) 52%, rgba(229, 239, 255, 0.94) 100%);
-  border: 1px solid rgba(219, 234, 254, 0.92);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.96) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: var(--radius);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    inset 0 -1px 0 rgba(148, 163, 184, 0.14),
-    0 18px 48px rgba(0, 28, 84, 0.24);
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -10px 18px rgba(15, 23, 42, 0.035),
+    0 16px 42px rgba(0, 28, 84, 0.24);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  transition: transform 170ms ease, border-color 170ms ease, box-shadow 170ms ease;
+  transition: transform 170ms ease, box-shadow 170ms ease;
 }
 
 .link-card::before {
@@ -199,16 +199,15 @@ h1 {
   inset: 0;
   pointer-events: none;
   content: "";
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.58) 48%, transparent 100%);
-  opacity: 0.42;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.62) 48%, transparent 100%);
+  opacity: 0.36;
 }
 
 .link-card:hover {
-  border-color: rgba(191, 219, 254, 0.98);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.96),
-    inset 0 -1px 0 rgba(96, 165, 250, 0.18),
-    0 22px 54px rgba(0, 28, 84, 0.3);
+    inset 0 -10px 18px rgba(15, 23, 42, 0.028),
+    0 20px 48px rgba(0, 28, 84, 0.29);
   transform: translateY(-2px);
 }
 
@@ -228,8 +227,8 @@ h1 {
   font-size: 0.76rem;
   font-weight: 900;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(219, 234, 254, 0.52)),
-    #e2e8f0;
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(226, 232, 240, 0.62)),
+    #e5e7eb;
   border: 1px solid rgba(148, 163, 184, 0.34);
   border-radius: 11px;
   box-shadow:
