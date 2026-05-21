@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Silicon Brief links, inquiries, projects, and socials.">
+    <title>Silicon Brief</title>
+    <link rel="icon" type="image/png" href="Profile.png">
+    <link rel="apple-touch-icon" href="Profile.png">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="top-actions" role="group" aria-label="Profile actions">
+        <a class="pill-button" href="mailto:hello@example.com">
+          <span class="button-icon" aria-hidden="true">
+            <svg class="icon-solid" viewBox="0 0 448 512">
+              <path d="M224 0c-17.7 0-32 14.3-32 32v19.2C119 66 64 130.6 64 208v25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416h400c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm0 512a64 64 0 0 0 64-64H160a64 64 0 0 0 64 64z"></path>
+            </svg>
+          </span>
+          Subscribe
+        </a>
+        <button class="icon-button" type="button" data-copy-link aria-label="Copy page link">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <path d="m16 6-4-4-4 4"></path>
+            <path d="M12 2v13"></path>
+          </svg>
+        </button>
+      </div>
+
+      <section class="profile" aria-labelledby="profile-title">
+        <div class="avatar-slot" data-avatar-placeholder role="img" aria-label="Silicon Brief logo">
+          <span>SB</span>
+        </div>
+        <h1 id="profile-title">Silicon Brief</h1>
+        <nav class="socials" aria-label="Social links" data-socials></nav>
+      </section>
+
+      <section class="links" aria-label="Featured links" data-links></section>
+    </main>
+
+    <div class="status-toast" role="status" aria-live="polite" data-toast>Link copied</div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
