@@ -12,13 +12,15 @@ const socials = [
 ];
 
 const links = [
+  { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
   { title: "CrePal", href: "https://crepal.ai/main", image: "logos/CrePal.png?v=7", initials: "CP" },
-  { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN" },
   { title: "Verdent", href: "https://www.verdent.ai/?id=700917", image: "logos/Verdent.png?v=7", initials: "VE" },
   { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png?v=7", initials: "HL" },
   { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png?v=7", initials: "TY" },
   { title: "Trip.com", href: "https://www.trip.com/t/8ebm0xr7mT2", image: "logos/Trip.png?v=7", initials: "TR" },
 ];
+
+const orderedLinks = [...links].sort((a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)));
 
 const icons = {
   mail: `
@@ -94,7 +96,7 @@ socialsContainer.innerHTML = socials
 
 const copyButton = document.querySelector("[data-copy-link]");
 
-linksContainer.innerHTML = links
+linksContainer.innerHTML = orderedLinks
   .map((item) => {
     const logo = item.image
       ? `<img src="${item.image}" alt="" loading="lazy" decoding="async">`
@@ -103,11 +105,13 @@ linksContainer.innerHTML = links
       : `<span aria-hidden="true">${item.initials}</span>`;
     const external = item.href.startsWith("http");
     const target = external ? ` target="_blank" rel="noopener noreferrer"` : "";
+    const pin = item.pinned ? `<span class="pin-marker" aria-hidden="true"><i class="fa-solid fa-thumbtack"></i></span>` : "";
 
     return `
-      <a class="link-card" href="${item.href}"${target}>
+      <a class="link-card" href="${item.href}"${target} data-pinned="${Boolean(item.pinned)}">
         <span class="logo-slot" data-kind="${item.shape || "square"}">${logo}</span>
         <span class="link-title">${item.title}</span>
+        ${pin}
       </a>
     `;
   })
