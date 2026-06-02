@@ -13,6 +13,8 @@ const socials = [
 
 const links = [
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
+  { title: "AliExpress: Smart Glasses", href: "https://s.click.aliexpress.com/e/_c3SwB4yZ", image: "logos/AliExpress Smart Glasses.png?v=7", initials: "PL" },
+  { title: "AliExpress: Team Link", href: "https://s.click.aliexpress.com/e/_c43JGvEv?af=SiliconBrief", image: "logos/AliExpress.png?v=7", initials: "TL" },
   { title: "CrePal", href: "https://crepal.ai/main", image: "logos/CrePal.png?v=7", initials: "CP" },
   { title: "Verdent", href: "https://www.verdent.ai/?id=700917", image: "logos/Verdent.png?v=7", initials: "VE" },
   { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png?v=7", initials: "HL" },
