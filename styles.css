@@ -268,6 +268,10 @@ h1 {
   opacity: 1;
 }
 
+.logo-slot[data-image-fit="cover"] img {
+  object-fit: cover;
+}
+
 .link-title {
   position: relative;
   z-index: 1;

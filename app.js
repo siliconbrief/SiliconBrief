@@ -13,7 +13,7 @@ const socials = [
 
 const links = [
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
-  { title: "Halliday", href: "https://bit.ly/siliconbriefhallidayg2", image: "logos/Halliday.jpeg?v=7", initials: "HA" },
+  { title: "Halliday", href: "https://bit.ly/siliconbriefhallidayg2", image: "logos/Halliday.jpeg?v=7", imageFit: "cover", initials: "HA" },
   { title: "TIMO", href: "https://yilink.ai/products/timo-ai-social?utm_source=tiktok&utm_medium=social&utm_campaign=about_the_dialogue&utm_content=siliconbrief_v01_product_demo", image: "logos/TIMO Robot.png?v=7", initials: "TI" },
   { title: "Fotor", href: "https://fotor.me/4nGjQ2K", image: "logos/Fotor.png?v=7", initials: "FT" },
   { title: "AliExpress: Smart Glasses", href: "https://s.click.aliexpress.com/e/_c3SwB4yZ", image: "logos/AliExpress Smart Glasses.png?v=7", initials: "PL" },
@@ -114,7 +114,7 @@ linksContainer.innerHTML = orderedLinks
 
     return `
       <a class="link-card" href="${item.href}"${target} data-pinned="${Boolean(item.pinned)}">
-        <span class="logo-slot" data-kind="${item.shape || "square"}">${logo}</span>
+        <span class="logo-slot" data-kind="${item.shape || "square"}" data-image-fit="${item.imageFit || "contain"}">${logo}</span>
         <span class="link-title">${item.title}</span>
         ${pin}
       </a>
