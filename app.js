@@ -23,6 +23,7 @@ const links = [
   { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png?v=7", initials: "HL" },
   { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png?v=7", initials: "TY" },
   { title: "Trip.com", href: "https://www.trip.com/t/8ebm0xr7mT2", image: "logos/Trip.png?v=7", initials: "TR" },
+  { title: "Dola", href: "https://www.dola.com/", image: "logos/Dola.png?v=1", initials: "DO" },
 ];
 
 const orderedLinks = [...links].sort((a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)));
