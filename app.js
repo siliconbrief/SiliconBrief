@@ -13,6 +13,7 @@ const socials = [
 
 const links = [
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
+  { title: "Dola", href: "https://www.dola.com/", image: "logos/Dola.png?v=1", initials: "DO" },
   { title: "Halliday", href: "https://bit.ly/siliconbriefhallidayg2", image: "logos/Halliday.jpeg?v=7", imageFit: "cover", initials: "HA" },
   { title: "TIMO", href: "https://yilink.ai/products/timo-ai-social?utm_source=tiktok&utm_medium=social&utm_campaign=about_the_dialogue&utm_content=siliconbrief_v01_product_demo", image: "logos/TIMO Robot.png?v=7", initials: "TI" },
   { title: "Fotor", href: "https://fotor.me/4nGjQ2K", image: "logos/Fotor.png?v=7", initials: "FT" },
@@ -23,7 +24,6 @@ const links = [
   { title: "Hollyland: Lark A1", href: "https://amzn.to/4bzbjJv", image: "logos/Hollyland.png?v=7", initials: "HL" },
   { title: "Typeless", href: "https://www.typeless.com/?via=leon-sweeting", image: "logos/Typeless.png?v=7", initials: "TY" },
   { title: "Trip.com", href: "https://www.trip.com/t/8ebm0xr7mT2", image: "logos/Trip.png?v=7", initials: "TR" },
-  { title: "Dola", href: "https://www.dola.com/", image: "logos/Dola.png?v=1", initials: "DO" },
 ];
 
 const orderedLinks = [...links].sort((a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)));
