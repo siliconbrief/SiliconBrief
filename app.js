@@ -13,7 +13,7 @@ const socials = [
 
 const links = [
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
-  { title: "VMake", href: "https://vmake.ai/creative-templates/brainrot-marketing?utm_source=tt&utm_medium=kocl&utm_campaign=VM_Web_tt_EN_bt_d4_silicon-brief", image: "logos/VMake.png?v=1", initials: "VM" },
+  { title: "VMake", href: "https://vmake.ai/creative-templates/brainrot-marketing?utm_source=tt&utm_medium=kocl&utm_campaign=VM_Web_tt_EN_bt_d4_siliconbrief", image: "logos/VMake.png?v=1", initials: "VM" },
   { title: "Dola", href: "https://www.dola.com/", image: "logos/Dola.png?v=1", initials: "DO" },
   { title: "Halliday", href: "https://bit.ly/siliconbriefhallidayg2", image: "logos/Halliday.jpeg?v=7", imageFit: "cover", initials: "HA" },
   { title: "TIMO", href: "https://yilink.ai/products/timo-ai-social?utm_source=tiktok&utm_medium=social&utm_campaign=about_the_dialogue&utm_content=siliconbrief_v01_product_demo", image: "logos/TIMO Robot.png?v=7", initials: "TI" },
