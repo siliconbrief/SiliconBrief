@@ -12,8 +12,8 @@ const socials = [
 ];
 
 const links = [
-  { title: "VMake", href: "https://vmake-global.go.link/2BpYG", image: "logos/VMake.png?v=1", initials: "VM", pinned: true },
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
+  { title: "VMake", href: "https://vmake-global.go.link/2BpYG", image: "logos/VMake.png?v=1", initials: "VM", pinned: true },
   { title: "Dola", href: "https://www.dola.com/", image: "logos/Dola.png?v=1", initials: "DO" },
   { title: "Halliday", href: "https://bit.ly/siliconbriefhallidayg2", image: "logos/Halliday.jpeg?v=7", imageFit: "cover", initials: "HA" },
   { title: "TIMO", href: "https://yilink.ai/products/timo-ai-social?utm_source=tiktok&utm_medium=social&utm_campaign=about_the_dialogue&utm_content=siliconbrief_v01_product_demo", image: "logos/TIMO Robot.png?v=7", initials: "TI" },
