@@ -13,6 +13,7 @@ const socials = [
 
 const links = [
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
+  { title: "Dreamina", href: "https://dreamina.capcut.com/ai-tool/home/?need_login=true&utm_medium=social&utm_source=tiktok&utm_campaign=siliconbrief", image: "logos/Dreamina.jpg?v=1", initials: "DR" },
   { title: "RayNeo Air 4 Pro", href: "https://bit.ly/4wO77xQ", image: "logos/RayNeo Air 4.jpg?v=1", imageFit: "cover", initials: "RN" },
   { title: "Vmake Labs", href: "https://vmake.ai/creative-templates/brainrot-marketing?utm_source=tt&utm_medium=kocl&utm_campaign=VM_Web_tt_EN_bt_d4_siliconbrief", image: "logos/VMake.png?v=1", initials: "VM" },
   { title: "Dola", href: "https://www.dola.com/", image: "logos/Dola.png?v=1", initials: "DO" },
