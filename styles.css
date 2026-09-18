@@ -272,6 +272,10 @@ h1 {
   object-fit: cover;
 }
 
+.logo-slot[data-image-fit="trim-padding"] img {
+  transform: scale(1.7);
+}
+
 .link-title {
   position: relative;
   z-index: 1;
