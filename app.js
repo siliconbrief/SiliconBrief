@@ -13,7 +13,7 @@ const socials = [
 
 const links = [
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
-  { title: "DJI Mic Mini 2", href: "https://www.dji.com/uk/mobile/mic-mini-2", image: "logos/DJI Mic Mini 2.png?v=1", imageFit: "trim-padding", initials: "DJ" },
+  { title: "DJI Mic Mini 2", href: "https://www.amazon.co.uk/dp/B0DDL8WGH5?maas=maas_adg_290279E6BAAC432EDA7787C903910BE3_afap_abs&ref_=aa_maas&tag=maas", image: "logos/DJI Mic Mini 2.png?v=1", imageFit: "trim-padding", initials: "DJ" },
   { title: "Dreamina", href: "https://dreamina.capcut.com/ai-tool/home/?need_login=true&utm_medium=social&utm_source=tiktok&utm_campaign=siliconbrief", image: "logos/Dreamina.jpg?v=1", initials: "DR" },
   { title: "RayNeo Air 4 Pro", href: "https://bit.ly/4wO77xQ", image: "logos/RayNeo Air 4.jpg?v=1", imageFit: "cover", initials: "RN" },
   { title: "Vmake Labs", href: "https://vmake.ai/creative-templates/brainrot-marketing?utm_source=tt&utm_medium=kocl&utm_campaign=VM_Web_tt_EN_bt_d4_siliconbrief", image: "logos/VMake.png?v=1", initials: "VM" },
