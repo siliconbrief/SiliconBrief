@@ -273,7 +273,7 @@ h1 {
 }
 
 .logo-slot[data-image-fit="trim-padding"] img {
-  transform: scale(1.7);
+  transform: scale(1.445);
 }
 
 .link-title {
