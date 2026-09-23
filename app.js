@@ -13,7 +13,7 @@ const socials = [
 
 const links = [
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
-  { title: "Hollyland: Lark A2", href: "https://amzn.to/3Saelhk", image: "logos/Hollyland Lark A2.png?v=1", imageFit: "trim-padding", initials: "HL" },
+  { title: "Hollyland: Lark A2", href: "https://amzn.to/3Saelhk", image: "logos/Hollyland Lark A2.png?v=2", imageFit: "trim-padding", initials: "HL" },
   { title: "DJI Mic 3", href: "https://www.amazon.es/dp/B0F995J8FR?maas=maas_adg_1EF40E594BC225D0410F85911A37CAE6_afap_abs&ref_=aa_maas&tag=maas", image: "logos/DJI Mic 3.png?v=1", imageFit: "trim-padding", initials: "DJ" },
   { title: "DJI Mic Mini 2", href: "https://www.amazon.co.uk/dp/B0DDL8WGH5?maas=maas_adg_290279E6BAAC432EDA7787C903910BE3_afap_abs&ref_=aa_maas&tag=maas", image: "logos/DJI Mic Mini 2.png?v=1", imageFit: "trim-padding", initials: "DJ" },
   { title: "Dreamina", href: "https://dreamina.capcut.com/ai-tool/home/?need_login=true&utm_medium=social&utm_source=tiktok&utm_campaign=siliconbrief", image: "logos/Dreamina.jpg?v=1", initials: "DR" },
