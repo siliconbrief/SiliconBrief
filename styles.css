@@ -272,6 +272,11 @@ h1 {
   object-fit: cover;
 }
 
+.logo-slot[data-image-fit="product-only"] img {
+  /* Hide the small branding above the glasses. */
+  clip-path: inset(20% 0 0);
+}
+
 .logo-slot[data-image-fit="trim-padding"] img {
   transform: scale(1.445);
 }
