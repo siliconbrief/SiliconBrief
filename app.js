@@ -12,6 +12,7 @@ const socials = [
 ];
 
 const links = [
+  { title: "PixVerse", href: "https://pixverse.onelink.me/0gRx/siliconbrief", image: "logos/PixVerse.svg?v=1", initials: "PV", pinned: true },
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
   { title: "RayNeo iO Smart Glasses", href: "https://dada.link/zWtQhg", image: "logos/RayNeo iO.png?v=1", imageFit: "product-only", initials: "RN" },
   { title: "Hollyland: Lark A2", href: "https://amzn.to/3Saelhk", image: "logos/Hollyland Lark A2.png?v=2", imageFit: "trim-padding", initials: "HL" },
