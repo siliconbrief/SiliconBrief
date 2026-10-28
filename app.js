@@ -12,8 +12,8 @@ const socials = [
 ];
 
 const links = [
-  { title: "PixVerse", href: "https://pixverse.onelink.me/0gRx/siliconbrief", image: "logos/PixVerse.svg?v=1", initials: "PV", pinned: true },
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
+  { title: "PixVerse", href: "https://pixverse.onelink.me/0gRx/siliconbrief", image: "logos/PixVerse.svg?v=1", initials: "PV" },
   { title: "RayNeo iO Smart Glasses", href: "https://dada.link/zWtQhg", image: "logos/RayNeo iO.png?v=1", imageFit: "product-only", initials: "RN" },
   { title: "Hollyland: Lark A2", href: "https://amzn.to/3Saelhk", image: "logos/Hollyland Lark A2.png?v=2", imageFit: "trim-padding", initials: "HL" },
   { title: "DJI Mic 3", href: "https://www.amazon.es/dp/B0F995J8FR?maas=maas_adg_1EF40E594BC225D0410F85911A37CAE6_afap_abs&ref_=aa_maas&tag=maas", image: "logos/DJI Mic 3.png?v=1", imageFit: "trim-padding", initials: "DJ" },
