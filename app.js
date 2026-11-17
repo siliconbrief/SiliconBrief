@@ -13,6 +13,7 @@ const socials = [
 
 const links = [
   { title: "Inquiries", href: "mailto:leonsmedia@iflytalent.com", image: "logos/Mail.png?v=7", initials: "IN", pinned: true },
+  { title: "DJI Mic Mini 2", href: "https://www.amazon.es/dp/B0G39C97WQ?maas=maas_adg_A6726963C0EDFB646BC7CBE8518B35CF_afap_abs&ref_=aa_maas&tag=maas", image: "logos/DJI Mic Mini 2.png?v=1", imageFit: "trim-padding", initials: "DJ" },
   { title: "PixVerse", href: "https://pixverse.onelink.me/0gRx/siliconbrief", image: "logos/PixVerse.svg?v=1", initials: "PV" },
   { title: "RayNeo iO Smart Glasses", href: "https://dada.link/zWtQhg", image: "logos/RayNeo iO.png?v=1", imageFit: "product-only", initials: "RN" },
   { title: "Hollyland: Lark A2", href: "https://amzn.to/3Saelhk", image: "logos/Hollyland Lark A2.png?v=2", imageFit: "trim-padding", initials: "HL" },
